@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE page-specification PUBLIC 
+    "-//Apache Software Foundation//Tapestry Specification 4.0//EN" 
+    "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+    
+<page-specification class="id.co.telkomsigma.webapp.action.minibank.AccountForm">
+    <inject property="engineService" object="engine-service:page"/>
+    
+    <inject property="request" object="service:tapestry.globals.HttpServletRequest"/>
+    <inject property="response" object="service:tapestry.globals.HttpServletResponse"/>
+    <inject property="accountManager" type="spring" object="accountManager"/>
+    <inject property="cifManager" type="spring" object="cifManager"/>
+    <inject property="productManager" type="spring" object="productManager"/>
+
+    <bean name="delegate" class="id.co.telkomsigma.webapp.tapestry.ValidationDelegate"/>
+    
+    <property name="account"/>
+    <property name="message" persist="flash"/>
+</page-specification>
+

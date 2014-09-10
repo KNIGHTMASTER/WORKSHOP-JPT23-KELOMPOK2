@@ -1,0 +1,18 @@
+<title><span key="mainMenu.title"/></title>
+<content tag="heading"><span key="mainMenu.heading"/></content>
+<meta name="menu" content="MainMenu"/>
+        
+<span jwcid="@ShowMessage"/>
+
+<p><span key="mainMenu.message"/></p>
+
+<div class="separator"></div>
+
+<ul class="glassList">
+    <li>
+        <a jwcid="@DirectLink" listener="ognl:listeners.editProfile"><span key="menu.user">Edit Profile</span></a>
+    </li>
+    <li>
+        <a jwcid="@PageLink" page="selectFile"><span key="menu.selectFile"/></a>
+    </li>
+</ul>

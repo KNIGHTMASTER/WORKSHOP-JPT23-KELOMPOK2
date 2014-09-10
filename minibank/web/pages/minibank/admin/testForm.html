@@ -1,0 +1,41 @@
+<title><span key="tes.title"/></title>
+<content tag="heading"><span key="test.heading"/></content>
+
+<body jwcid="@Body" id="test">
+
+<span jwcid="@ShowMessage"/>
+
+<span jwcid="@ShowValidationError" delegate="ognl:beans.delegate"/>
+
+<div class="separator"></div>
+  
+<form jwcid="testForm@Form" delegate="ognl:beans.delegate" clientValidationEnabled="true">
+<ul>
+    <li class="info">
+        <span key="test.message"/>
+        <input jwcid="@Hidden" type="hidden" id="id" value="ognl:test.id" />
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.nameField">Name</label>
+        <input jwcid="nameField@TextField" type="text" value="ognl:test.name" 
+        validators="validators:required" id="name" class="text large" displayName="message:test.name"/>
+    </li>
+    <li class="buttonBar bottom">    	
+    	<span jwcid="@If" condition="ognl:test.name == null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.add" id="save" action="listener:save"/>
+        </span>
+        <span jwcid="@If" condition="ognl:test.name != null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.edit" id="save" action="listener:save"/>
+        </span>    
+        <input type="submit" class="button" jwcid="@Submit" value="message:button.cancel" id="cancel" action="listener:cancel"
+            onclick="form.onsubmit = null"/>
+    </li>
+</ul>
+</form>
+
+<script type="text/javascript">
+    Form.focusFirstElement($("testForm"));
+    highlightFormElements();
+</script>
+
+</body>

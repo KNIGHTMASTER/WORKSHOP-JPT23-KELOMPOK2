@@ -1,0 +1,19 @@
+<head>
+    <title><span key="activeUsers.title"/></title>
+    <content tag="heading"><span key="activeUsers.heading"/></content>
+    <meta name="menu" content="AdminMenu"/>
+</head>
+<body id="activeUsers"/>
+
+<p><span key="activeUsers.message"/></p>
+
+<div class="separator"></div>
+
+<p><input type="button" onclick="location.href='mainMenu.html'" jwcid="@Any" value="message:button.done"/></p>
+  
+<table jwcid="table@contrib:Table" class="table contribTable" id="user"
+    rowsClass="ognl:beans.evenOdd.next" row="ognl:row" 
+    columns="user.username:username, activeUsers.fullName:fullName" 
+    source="ognl:getServletContext().getAttribute('userNames')" initialSortColumn="user.username"
+    arrowUpAsset="ognl:assets.upArrow" arrowDownAsset="ognl:assets.downArrow">
+</table>

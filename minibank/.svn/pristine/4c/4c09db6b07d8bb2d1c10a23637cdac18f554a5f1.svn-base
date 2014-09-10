@@ -1,0 +1,10 @@
+#Hibernate Configuration for JUnit tests
+#Wed, 30 Apr 2014 11:52:27 +0700
+
+hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+hibernate.connection.driver_class=com.mysql.jdbc.Driver
+hibernate.connection.url=jdbc\:mysql\://localhost/minibankdb?useUnicode\=true&characterEncoding\=utf-8
+hibernate.connection.username=minibankdbuser
+hibernate.connection.password=minibankdbpass
+hibernate.connection.show_sql=true
+dao.type=hibernate

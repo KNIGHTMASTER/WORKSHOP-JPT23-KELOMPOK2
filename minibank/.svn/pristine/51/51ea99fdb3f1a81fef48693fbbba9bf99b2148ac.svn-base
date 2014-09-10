@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+	<Displayers>
+		<Displayer name="Velocity"
+			type="net.sf.navigator.displayer.VelocityMenuDisplayer" />
+	</Displayers>
+	<Menus>
+		<Menu name="MainMenu" title="mainMenu.title" page="/mainMenu.html" />
+		<Menu name="UserMenu" title="menu.user" description="User Menu" page="mainMenu,$DirectLink.sdirect" roles="admin,user" />
+		<Menu name="FileUpload" title="menu.selectFile" description="File Upload" width="100" page="/selectFile.html" roles="admin,user" />
+
+		<Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="admin" width="120" page="/users.html">
+			<Item name="ViewUsers" title="menu.admin.users" page="/users.html" />
+			<Item name="ActiveUsers" title="mainMenu.activeUsers" page="/activeUsers.html" />
+			<Item name="ReloadContext" title="menu.admin.reload" page="/reload.html" />
+			<Item name="FlushCache" title="menu.flushCache" page="/flushCache.html" />
+			<Item name="Clickstream" title="menu.clickstream" page="/clickstreams.jsp" />
+			<Item name="Account" title="menu.account" page="/accountList.html">
+				<Item name="addAccount" title="menu.account.add" page="/accountForm.html" />
+				<Item name="listAccount" title="menu.account.list" page="/accountList.html" />
+			</Item>
+			<Item name="Product" title="menu.product" page="/productList.html" roles="admin">
+				<Item name="addProduct" title="menu.product.add" page="/productForm.html" />
+				<Item name="listProduct" title="menu.product.list" page="/productList.html" />
+			</Item>
+			<Item name="CIF" title="menu.cif" page="/cifList.html">
+				<Item name="addCif" title="menu.cif.add" page="/cifForm.html" />
+				<Item name="listCif" title="menu.cif.list" page="/cifList.html" />
+			</Item>
+		</Menu>
+		
+		<Menu name="CustomerMenu" title="menu.customer" description="Customer Menu">
+			<Item name="Transactions" title="menu.transactions" page="/transactionsForm.html">
+				<Item name="addTransactions" title="menu.transactions.add" page="/transactionsForm.html" />
+				<Item name="depositTransactions" title="menu.transactions.deposit" page="/transactionsDepositForm.html" />
+				<Item name="listTransactions" title="menu.transactions.list" page="/transactionsList.html" />
+			</Item>
+		</Menu>
+
+		<Menu name="Logout" title="user.logout" page="/logout.jsp" roles="admin,user" />
+	</Menus>
+</MenuConfig>

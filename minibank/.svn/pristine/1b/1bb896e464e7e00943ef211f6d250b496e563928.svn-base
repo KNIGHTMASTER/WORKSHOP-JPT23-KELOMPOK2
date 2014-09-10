@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE application PUBLIC 
+    "-//Apache Software Foundation//Tapestry Specification 4.0//EN" 
+    "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+    
+<application name="tapestry"> 
+
+    <meta key="org.apache.tapestry.visit-class" value="id.co.telkomsigma.webapp.action.Visit"/>
+    
+    <library id="contrib" specification-path="/org/apache/tapestry/contrib/Contrib.library"/> 
+    
+    <page name="error" specification-path="pages/error.page"/>
+    <page name="Home" specification-path="pages/mainMenu.page"/>
+    <page name="activeUsers" specification-path="pages/activeUsers.page"/>
+    <page name="mainMenu" specification-path="pages/mainMenu.page"/>
+    <page name="passwordHint" specification-path="pages/passwordHint.page"/>
+    <page name="reload" specification-path="pages/reload.page"/>
+    <page name="selectFile" specification-path="pages/selectFile.page"/>
+    <page name="showFile" specification-path="pages/showFile.page"/>
+    <page name="signup" specification-path="pages/signup.page"/>
+    <page name="userForm" specification-path="pages/userForm.page"/>
+    <page name="users" specification-path="pages/users.page"/>
+    
+    <!-- Add additional pages here -->    
+    <page name="cifForm" specification-path="pages/minibank/admin/cifForm.page"/>
+    <page name="cifList" specification-path="pages/minibank/admin/cifList.page"/>
+    <page name="accountForm" specification-path="pages/minibank/admin/accountForm.page"/>
+    <page name="accountList" specification-path="pages/minibank/admin/accountList.page"/>
+    <page name="productForm" specification-path="pages/minibank/admin/productForm.page"/>
+    <page name="productList" specification-path="pages/minibank/admin/productList.page"/>
+    <page name="depositForm" specification-path="pages/minibank/customer/depositForm.page"/>
+    <page name="transferForm" specification-path="pages/minibank/customer/transferForm.page"/>
+    <page name="withdrawalForm" specification-path="pages/minibank/customer/withdrawalForm.page"/>
+    <page name="mutasiList" specification-path="pages/minibank/customer/mutasiList.page"/>
+    <page name="transactionsList" specification-path="pages/minibank/admin/transactionsList.page"/>
+    
+	<page name="transactionsDepositForm" specification-path="pages/minibank/admin/transactionsDepositForm.page"/>
+    <page name="transactionsDepositList" specification-path="pages/minibank/admin/transactionsDepositList.page"/>
+    
+    <extension name="org.apache.tapestry.multipart-decoder"
+        class="org.apache.tapestry.multipart.DefaultMultipartDecoder">
+        <!-- Max size (in bytes) for uploaded files -->
+        <configure property="maxSize" value="2097152"/>
+    </extension>
+    
+</application>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+
+>
+
+    <class
+            name="id.co.telkomsigma.model.minibank.Product"
+            table="product"
+    >
+
+    <id
+        name="id"
+            column="id"
+            unsaved-value="null"
+    >
+
+    <!-- The generator-class attribute of @hibernate.id is deprecated, use the @hibernate.generator tag instead -->
+    <generator class="native">
+
+    </generator>
+
+    </id>
+
+        <property
+            name="name"
+                    column="name"
+                length="50"
+                not-null="true"
+                unique="false"
+        >
+
+        </property>
+
+        <property
+            name="price"
+                    column="price"
+                length="50"
+                not-null="true"
+                unique="false"
+        >
+
+        </property>
+
+        <property
+            name="remark"
+                    column="remark"
+                length="500"
+                not-null="true"
+                unique="false"
+        >
+
+        </property>
+
+        <one-to-one
+            name="account"
+            class="id.co.telkomsigma.model.minibank.Account"
+            cascade="all"
+        >
+
+        </one-to-one>
+
+        <property
+            name="productEnable"
+                    column="productEnable"
+                not-null="false"
+        >
+
+        </property>
+
+    </class>    
+
+</hibernate-mapping>
+

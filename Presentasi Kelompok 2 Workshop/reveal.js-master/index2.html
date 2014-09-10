@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>WORKSHOP (APLIKASI MINIBANK)</title>
+
+		<meta name="description" content="Presentasi WorkShop">
+		<meta name="author" content="Kelompok II Java Trainee Programmer">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+        <div class="reveal">
+            <div class="slides">
+                <!--1-->
+                <section data-background="#FFFFFF">
+                    <img src="image/communication/Telkomsigma.jpg" height="340" width="1000">
+                    <img align="right"  height="120" width="150" src="image/java-trainee.jpg" ></a>
+                    <h3 style="color: #111111">&nbsp &nbsp Mini Bank Project</h4>
+                    <h3 style="color: #111111">&nbsp &nbsp WorkShop Java Trainee Programmer</h4>
+					<br><br>
+					<h4 style="color: #111111">Autthor : </h4>
+					<h4 style="color: green">Kelompok II</h4>
+                
+                </section>
+
+                <!--2-->
+                <section id="fragments">
+					
+						<h2>Overview</h2>
+							<ol>
+							<li class="fragment grow highlight-current-green"><code>Abstract</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Software Requirement </code></li>
+							<li class="fragment grow highlight-current-green"><code>Use Case</code></li>
+							<li class="fragment grow highlight-current-green"><code>Class Digram</code></li>
+                                <li class="fragment grow highlight-current-green"><code>Versioning</code></li>
+							<li class="fragment grow highlight-current-green"><code>Model & Database</code></li>
+							<li class="fragment grow highlight-current-green"><code>Data Access object</code></li>
+							<li class="fragment grow highlight-current-green"><code>JUnit: DAO Testing</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Service Manager</code></li>
+							<li class="fragment grow highlight-current-green"><code>Views</code></li>
+							<li class="fragment grow highlight-current-green"><code>Controllers</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Deployment</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Go Live</code></li>
+						</ol>
+					
+                </section>
+
+                <!--2-->
+                <section>
+				<section data-background-transition="slide" data-background="image/communication/Telkomsigma.jpg" style="background: rgba(255,255,255,0.9)" >
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">1. ABSTRACT</h2>
+						<p style="font-family: sans-serif; color: #111111">	Project minibank merupakan implementasi dari Core konsep perbankan yang terdiri atas prose deposit , withdrawal dan transfer</p>
+                    </section>
+					</section>
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">2. Software Requirement</h2>
+                        <img src="image/gambar/requirement1.PNG"/>
+                    </section>
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">Software Requirement - Cont</h2>
+                        <img src="image/gambar/requirement2.PNG"/>
+                    </section>
+
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">Use Case</h2>
+                        <a><img src="image/usecasebank.PNG"></a>
+                    </section>
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">Class Diagram</h2>
+                        <a><img src="image/classdiagrambank.PNG"></a>
+                    </section>
+                </section>
+                <!--4-->
+                <section>
+                    <section>
+                        <h2>3. Development</h2>
+                        <ol>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Create New Project With Ant</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Prepare Database</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Prepare Versioning</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Model</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Dao</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Junit Test</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Service</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>View</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Controller</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Deploy</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Go Live</code></li>
+                        </ol>
+                    </section>
+                </section>
+
+                <!--5-->
+                <section>
+                    <section>
+                        <h2>Create New Project With ANt</h2>
+                        <img src="image/newproject1.PNG">
+                        <img src="image/newproject2.PNG">
+                    </section>
+                </section>
+                
+                <!--7-->
+                <section>
+                    <h3>Prepare Database</h3>
+                    <img src="image/Database%20Configuration.JPG">
+                </section>
+
+                <!--7-->
+                <section>
+                    <h3>Prepare Versioning</h3>
+                    <img src="image/Gambar%20Package%20Explore%20Pake%20SVN.PNG">
+                </section>
+
+                <!--7-->
+                <section>
+                    <h3>Commit History</h3>
+                <img src="image/Commit%20History%20Kita.PNG">
+                </section>
+                <!--8-->
+                <section>
+                    <section data-background="#FFFFFF">
+                        <h3 style="color: #111111">Model</h3>
+                    </section>
+                    <section data-background="Teal">
+                        <h3>Customer Model</h3>
+                        <img src="image/CustomerModel.PNG">
+                    </section>
+                    <section data-background="#FF4500">
+                        <h3 style="color: #111111">CIF Model</h3>
+                        <img src="image/flowchart/CIFModel.PNG">
+                    </section>
+                    <section data-background="#00FFFF">
+                        <h3 style="color: #111111">Account Model</h3>
+                        <img src="image/AccountModel.PNG">
+                    </section>
+                    <section data-background="ADFF2F">
+                        <h3 style="color: #111111">Product Model</h3>
+                        <img src="image/ProductModel.PNG">
+                    </section>
+                    <section data-background="#DCDCDC">
+                        <h3 style="color: #111111">Transaction Model</h3>
+                        <img src="image/TransactionsModel.PNG">
+                    </section>
+                    <section data-background="#DCDCDC">
+                        <h3 style="color: #111111">Register Model as Hibernate Docklet</h3>
+                        <img src="image/gambar/registermodel.PNG">
+                    </section>
+
+                    <!--DAO-->
+                    <section data-background="#FFC0CB">
+                        <h3 style="color: #111111">5. Data Access Object (DAO)</h3>
+                    </section>
+                    <section data-background="#FFFF00">
+                        <h3 style="color: #111111">5.1. Customer Dao</h3>
+                        <a><img src="image/CustomerDao.PNG"></a>
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.2 CIF Dao</h3>
+                        <img src="image/CIFDAo.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.3 Account Dao</h3>
+                        <img src="image/AccountDao.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.4 Product Dao</h3>
+                        <img src="image/ProductDao.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.5 Transaction Dao</h3>
+                        <img src="image/TransactionDao.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.6 ApplicationContext-Hibernate</h3>
+                        <img src="image/gambar/applicationcontext-hibernate.JPG">
+                    </section>
+
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">JUNIT TESTING</h3>
+                        <img src="image/gambar/applicationcontext-hibernate.JPG">
+                    </section>
+
+                    <!--MANAGER-->
+                    <section data-background="#00FFFF">
+                        <h3 style="color: #111111">6. Service (Manager)</h3>
+                    </section>
+                    <section data-background="#FFFF00">
+                        <h3 style="color: #111111">6.1. User Manager</h3>
+                        <a><img src="image/gambar/userManager.PNG"></a>
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.2 CIF Manager</h3>
+                        <img src="image/gambar/cifmanager.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.3 Account Manager</h3>
+                        <img src="image/gambar/accountmanager.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.4 Product Manager</h3>
+                        <img src="image/gambar/productmanajer.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.5 Transaction Manager</h3>
+                        <img src="image/gambar/tarnsactionsmanager.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.6 Application Context Service</h3>
+                        <img src="image/gambar/applicationcontext-service.JPG">
+                        <img src="image/gambar/applicationcontext-service2.JPG">
+                    </section>
+                    </section>
+                </section>
+
+                <!--9-->
+                <section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">View</h3>
+                        <img src="image/gambar/productformhtml.PNG">
+                    </section>
+
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">*.Page File</h3>
+                        <img src="image/gambar/productformjava.PNG">
+                    </section>
+
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">Controller</h3>
+                        <img src="image/gambar/productformpage.PNG">
+                    </section>
+                </section>
+
+                <!--11-->
+                <section>
+                    <section data-background="#FFFFFF">
+                        <h3 style="color: #111111">5. Deployment</h3>
+                    </section>
+                    <section data-background="#FFFFFF">
+                        <h3 style="color: #111111">6. Go Live</h3>
+                        <a href="localhost:8060/minibank" target="_blank">Show Main Page Program</a>
+                        <p align="center" style="color: #111111; font-size: 20px">(right click -> open in new tab)</p>
+                    </section>
+                </section>
+
+                <!--10-->
+                <section data-background="#FFFFFF">
+                    <h1 style="color: #111111">Matur Thank You</h1>
+                </section>
+
+            </div>
+        </div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<title><span key="upload.title"/></title>
+<content tag="heading"><span key="upload.heading"/></content>
+<meta name="menu" content="FileUpload"/>
+<body jwcid="@Body">
+
+<span jwcid="@ShowValidationError" delegate="ognl:beans.delegate"/>
+<span jwcid="@ShowMessage"/>
+
+<div class="separator"></div>
+
+<form jwcid="form">
+<ul>
+    <li class="info">
+        <span key="upload.message"/>
+    </li>
+    <li>
+        <label class="desc" for="name"><span key="uploadForm.name">Name</span>&nbsp;<span class="req">*</span></label>
+        <input jwcid="nameField" type="text" id="name" class="text medium"/>
+    </li>
+    <li>
+        <label class="desc" for="file"><span key="uploadForm.file">File</span>&nbsp;<span class="req">*</span></label>
+        <input type="file" jwcid="@Upload" file="ognl:file" class="file medium"
+            displayName="message:uploadForm.file" validators="validators:required" id="file"/>
+    </li>
+    <li class="buttonBar bottom">
+        <input type="submit" class="button" jwcid="@Submit"
+            value="message:button.save" id="save" action="listener:upload"/>
+        <input type="submit" class="button" jwcid="@Submit"
+            value="message:button.cancel" id="cancel" action="listener:cancel"
+            onclick="form.onsubmit = null"/>
+    </li>
+</ul>
+</form>
+
+<script type="text/javascript">highlightFormElements();</script>
+
+</body>

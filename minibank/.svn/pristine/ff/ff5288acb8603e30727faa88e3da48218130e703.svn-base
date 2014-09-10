@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+
+>
+
+    <class
+            name="id.co.telkomsigma.model.minibank.Account"
+            table="account"
+    >
+
+    <id
+        name="id"
+            column="id"
+            unsaved-value="null"
+    >
+
+    <!-- The generator-class attribute of @hibernate.id is deprecated, use the @hibernate.generator tag instead -->
+    <generator class="native">
+
+    </generator>
+
+    </id>
+
+        <property
+            name="number"
+                    column="number"
+                length="20"
+                not-null="true"
+                unique="true"
+        >
+
+        </property>
+
+        <property
+            name="balance"
+                    column="balance"
+                not-null="true"
+        >
+
+        </property>
+
+        <many-to-one
+            name="cif"
+                    class="id.co.telkomsigma.model.minibank.CIF"
+                    column="fk_cif_id"
+                cascade="all"
+        >
+
+        </many-to-one>
+
+        <many-to-one
+            name="product"
+                    class="id.co.telkomsigma.model.minibank.Product"
+                    column="fk_product_id"
+                cascade="all"
+        >
+
+        </many-to-one>
+
+        <property
+            name="account_enable"
+                    column="account_enable"
+        >
+
+        </property>
+
+        <set
+            name="transactionsources"
+            lazy="false"
+            cascade="all"
+        >
+
+            <key
+                column="fk_accountsource_id"
+            >
+
+            </key>          
+
+            <one-to-many
+                class="id.co.telkomsigma.model.minibank.Transactions"
+            />
+
+        </set>
+
+        <one-to-one
+            name="transactiondestination"
+            class="id.co.telkomsigma.model.minibank.Transactions"
+            cascade="all"
+        >
+
+        </one-to-one>
+
+    </class>    
+
+</hibernate-mapping>
+

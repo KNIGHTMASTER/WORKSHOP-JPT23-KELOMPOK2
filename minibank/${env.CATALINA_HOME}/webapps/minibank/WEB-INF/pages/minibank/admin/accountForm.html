@@ -1,0 +1,61 @@
+<title><span key="account.title"/></title>
+<content tag="heading"><span key="account.heading"/></content>
+
+<body jwcid="@Body" id="account">
+
+<span jwcid="@ShowMessage"/>
+
+<span jwcid="@ShowValidationError" delegate="ognl:beans.delegate"/>
+
+<div class="separator"></div>
+  
+<form jwcid="accountForm@Form" delegate="ognl:beans.delegate" clientValidationEnabled="true">
+<ul>
+    <li class="info">
+        <span key="account.message"/>
+        <input jwcid="@Hidden" type="hidden" id="id" value="ognl:account.id" />
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.numberField">Number Account</label>
+        <input jwcid="numberField@TextField" type="text" value="ognl:account.number" 
+        validators="validators:required" id="number" class="text large" displayName="message:account.number"/>
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.balanceField">Balance</label>
+        <input jwcid="balanceField@TextField" type="text" value="ognl:account.balance" 
+        id="balance" class="text large" displayName="message:account.balance"/>
+    </li>
+    <li>
+        <p><span key="account.product"/> <label><span class="req">*</span></label></p>        
+        <select jwcid="productField" size="1" class="select">
+        	<option></option>
+        </select>
+    </li> 
+    <li class="buttonBar bottom">    	
+    	<span jwcid="@If" condition="ognl:account.number == null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.add" id="save" action="listener:save"/>
+        </span>
+        <span jwcid="@If" condition="ognl:account.number != null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.edit" id="save" action="listener:save"/>
+        </span>    
+        <input type="submit" class="button" jwcid="@Submit" value="message:button.cancel" id="cancel" action="listener:cancel"
+            onclick="form.onsubmit = null"/>
+    </li>
+    
+  	<li>
+        <span key="account.cif"/> List <label><span class="req"></span></label>
+        <span jwcid="@If" condition="ognl:account.cif != null">        
+        	<select jwcid="cifField" size="1" class="select">
+        		<option></option>
+        	</select>
+        </span>
+    </li>   
+</ul>
+</form>
+
+<script type="text/javascript">
+    Form.focusFirstElement($("accountForm"));
+    highlightFormElements();
+</script>
+
+</body>

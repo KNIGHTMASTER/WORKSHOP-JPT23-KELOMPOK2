@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+
+>
+
+    <class
+            name="id.co.telkomsigma.model.minibank.Transactions"
+            table="transactions"
+    >
+
+    <id
+        name="id"
+            column="id"
+            unsaved-value="null"
+    >
+
+    <!-- The generator-class attribute of @hibernate.id is deprecated, use the @hibernate.generator tag instead -->
+    <generator class="native">
+
+    </generator>
+
+    </id>
+
+        <many-to-one
+            name="accountSource"
+                    class="id.co.telkomsigma.model.minibank.Account"
+                cascade="all"
+        >
+
+        </many-to-one>
+
+        <many-to-one
+            name="accountDestination"
+                    class="id.co.telkomsigma.model.minibank.Account"
+                    column="fk_accountdestination_id"
+                cascade="all"
+        >
+
+        </many-to-one>
+
+        <property
+            name="date"
+                    column="date"
+                not-null="false"
+                unique="false"
+        >
+
+        </property>
+
+        <property
+            name="status"
+                    column="status"
+                not-null="false"
+        >
+
+        </property>
+
+        <property
+            name="amount"
+                    column="amount"
+                length="100"
+                not-null="false"
+        >
+
+        </property>
+
+        <property
+            name="transactionType"
+                    column="transactionType"
+                length="100"
+                not-null="false"
+        >
+
+        </property>
+
+    </class>    
+
+</hibernate-mapping>
+

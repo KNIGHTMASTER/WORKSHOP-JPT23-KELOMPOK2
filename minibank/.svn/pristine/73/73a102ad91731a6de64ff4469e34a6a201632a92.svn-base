@@ -1,0 +1,48 @@
+<title><span key="cifS.title"></span></title>
+<content tag="heading"> <span key="cifS.heading" /></content>
+
+<body jwcid="@Body" id="Cif">
+
+	<span jwcid="@ShowMessage" />
+
+	<div class="separator"></div>
+
+	<table jwcid="table@contrib:Table" class="table contribTable"
+		id="cifList" rowsClass="ognl:beans.evenOdd.next" row="ognl:row"
+		columns="cifS.number:number, cifS.foundSource:foundSource, button.add:addAccount"
+		source="ognl:cifList" initialSortColumn="name"
+		arrowUpAsset="ognl:assets.upArrow"
+		arrowDownAsset="ognl:assets.downArrow">
+
+		<tr jwcid="cifS_numberColumnValue@Block">
+			<a jwcid="@DirectLink" listener="ognl:listeners.edit"
+				parameters="ognl:row.id"> <span jwcid="@Insert"
+				value="ognl:row.number" />
+			</a>
+		</tr>
+
+		<tr jwcid="cifS_foundSourceColumnValue@Block">
+			<span jwcid="@Insert" value="ognl:row.foundSource" />
+		</tr>
+
+		<tr jwcid="button_addColumnValue@Block">
+			<a jwcid="@DirectLink" listener="ognl:listeners.addAccount"
+				parameters="ognl:row.id"> <span jwcid="@Insert"
+				value="ognl:row.number" />
+			</a>
+		</tr>
+
+	</table>
+
+
+	<input type="button" class="button"
+		onclick="location.href='productForm.html'" jwcid="@Any"
+		value="message:button.add" />
+	<input type="button" class="button"
+		onclick="location.href='mainMenu.html'" jwcid="@Any"
+		value="message:button.done" />
+
+	<script type="text/javascript">
+		highlightTableRows("customerList");
+	</script>
+</body>

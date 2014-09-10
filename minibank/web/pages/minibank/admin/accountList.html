@@ -1,0 +1,28 @@
+<title><span key="account.title"></span></title>
+<content tag="heading"><span key="account.heading"/></content>  
+
+<body jwcid="@Body" id="account">
+
+<span jwcid="@ShowMessage"/>
+
+<div class="separator"></div>
+
+<table jwcid="table@contrib:Table" class="table contribTable" id="accountList"
+    rowsClass="ognl:beans.evenOdd.next" row="ognl:row" 
+    columns="account.number:number, account.balance:balance" 
+    source="ognl:accountList" initialSortColumn="name"
+    arrowUpAsset="ognl:assets.upArrow" arrowDownAsset="ognl:assets.downArrow">
+    <tr jwcid="account_numberColumnValue@Block">
+        <a jwcid="@DirectLink" listener="ognl:listeners.edit" parameters="ognl:row.id">
+            <span jwcid="@Insert" value="ognl:row.number"/>
+        </a>
+    </tr>
+    <tr jwcid="account_balanceColumnValue@Block">
+		<span jwcid="@Insert" value="ognl:row.balance"/>
+    </tr>    
+</table>
+
+<script type="text/javascript">
+    highlightTableRows("accountList");
+</script>
+</body>

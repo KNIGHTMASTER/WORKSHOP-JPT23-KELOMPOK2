@@ -1,0 +1,51 @@
+<title><span key="product.title"/></title>
+<content tag="heading"><span key="product.heading"/></content>
+
+<body jwcid="@Body" id="product">
+
+<span jwcid="@ShowMessage"/>
+
+<span jwcid="@ShowValidationError" delegate="ognl:beans.delegate"/>
+
+<div class="separator"></div>
+  
+<form jwcid="productForm@Form" delegate="ognl:beans.delegate" clientValidationEnabled="true">
+<ul>
+    <li class="info">
+        <span key="product.message"/>
+        <input jwcid="@Hidden" type="hidden" id="id" value="ognl:product.id" />
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.nameField">Product Name</label>
+        <input jwcid="nameField@TextField" type="text" value="ognl:product.name" 
+        validators="validators:required" id="name" class="text large" displayName="message:product.name"/>
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.priceField">Price</label>
+        <input jwcid="priceField@TextField" type="text" value="ognl:product.price" 
+        id="price" class="text large" displayName="message:product.price"/>
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.remarkField">Remark</label>
+        <input jwcid="remarkField@TextField" type="text" value="ognl:product.remark" 
+        validators="validators:required" id="remark" class="text large" displayName="message:product.remark"/>
+    </li>
+    <li class="buttonBar bottom">    	
+    	<span jwcid="@If" condition="ognl:product.name == null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.add" id="save" action="listener:save"/>
+        </span>
+        <span jwcid="@If" condition="ognl:product.name != null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.edit" id="save" action="listener:save"/>
+        </span>    
+        <input type="submit" class="button" jwcid="@Submit" value="message:button.cancel" id="cancel" action="listener:cancel"
+            onclick="form.onsubmit = null"/>
+    </li>
+</ul>
+</form>
+
+<script type="text/javascript">
+    Form.focusFirstElement($("productForm"));
+    highlightFormElements();
+</script>
+
+</body>

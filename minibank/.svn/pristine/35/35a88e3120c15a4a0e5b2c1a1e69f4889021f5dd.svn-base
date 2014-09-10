@@ -1,0 +1,35 @@
+<title><span key="transactions.title"></span></title>
+<content tag="heading"><span key="transactions.heading"/></content>  
+
+<body jwcid="@Body" id="transactions">
+
+<span jwcid="@ShowMessage"/>
+
+<div class="separator"></div>
+
+<table jwcid="table@contrib:Table" class="table contribTable" id="transactionsList" 
+	rowsClass="ognl:beans.evenOdd.next" row="ognl:row" 
+	columns="transactions.date:date, transactions.status:status, transactions.amount:amount, transactions.transactionType:transactionType" 
+	source="ognl:transactionsList" initialSortColumn="date" 
+	arrowUpAsset="ognl:assets.upArrow" arrowDownAsset="ognl:assets.downArrow">
+    <tr jwcid="transactions_dateColumnValue@Block">
+        <a jwcid="@DirectLink" listener="ognl:listeners.edit" parameters="ognl:row.id">
+            <span jwcid="@Insert" value="ognl:row.date"/>
+        </a>
+    </tr>
+    <tr jwcid="transactions_statusColumnValue@Block">
+		<span jwcid="@Insert" value="ognl:row.status"/>
+    </tr>
+    <tr jwcid="transactions_amountColumnValue@Block">
+		<span jwcid="@Insert" value="ognl:row.amount"/>
+    </tr>
+    <tr jwcid="transactions_transactionTypeColumnValue@Block">
+		<span jwcid="@Insert" value="ognl:row.transactionType"/>
+    </tr>
+
+</table>
+
+<script type="text/javascript">
+    highlightTableRows("transactionsList");
+</script>
+</body>

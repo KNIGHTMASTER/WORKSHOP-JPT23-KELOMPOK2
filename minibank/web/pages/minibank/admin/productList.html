@@ -1,0 +1,36 @@
+<title><span key="product.title"></span></title>
+<content tag="heading"><span key="product.heading"/></content>  
+
+<body jwcid="@Body" id="product">
+
+<span jwcid="@ShowMessage"/>
+
+<div class="separator"></div>
+
+<table jwcid="table@contrib:Table" class="table contribTable" id="productList"
+    rowsClass="ognl:beans.evenOdd.next" row="ognl:row" 
+    columns="product.name:name, product.price:price, product.remark:remark" 
+    source="ognl:productList" initialSortColumn="name"
+    arrowUpAsset="ognl:assets.upArrow" arrowDownAsset="ognl:assets.downArrow">
+    
+    <tr jwcid="product_nameColumnValue@Block">
+        <a jwcid="@DirectLink" listener="ognl:listeners.edit" parameters="ognl:row.id">
+            <span jwcid="@Insert" value="ognl:row.name"/>
+        </a>
+    </tr>
+    
+    <tr jwcid="product_priceColumnValue@Block">
+		<span jwcid="@Insert" value="ognl:row.price"/>
+    </tr>
+    <tr jwcid="product_remarkColumnValue@Block">
+		<span jwcid="@Insert" value="ognl:row.remark"/>
+    </tr>    
+</table>
+ 
+<input type="button" class="button" onclick="location.href='productForm.html'" jwcid="@Any" value="message:button.add"/>
+<input type="button" class="button" onclick="location.href='mainMenu.html'" jwcid="@Any" value="message:button.done"/>
+
+<script type="text/javascript">
+    highlightTableRows("productList");
+</script>
+</body>

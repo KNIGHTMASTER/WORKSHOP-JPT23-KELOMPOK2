@@ -1,0 +1,46 @@
+<title><span key="cifS.title"/></title>
+<content tag="heading"><span key="cifS.heading"/></content>
+
+<body jwcid="@Body" id="cifS">
+
+<span jwcid="@ShowMessage"/>
+
+<span jwcid="@ShowValidationError" delegate="ognl:beans.delegate"/>
+
+<div class="separator"></div>
+  
+<form jwcid="CIFForm@Form" delegate="ognl:beans.delegate" clientValidationEnabled="true">
+<ul>
+    <li class="info">
+        <span key="cifS.message"/>
+        <input jwcid="@Hidden" type="hidden" id="id" value="ognl:CIF.id" />
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.numberField">CIF Number</label>
+        <input jwcid="numberField@TextField" type="text" value="ognl:CIF.number" 
+        validators="validators:required" id="cifNumber" class="text large" displayName="message:cifS.number"/>
+    </li>
+    <li>
+        <label class="desc" jwcid="@FieldLabel" field="ognl:components.foundSourceField">Fund Source</label>
+        <input jwcid="foundSourceField@TextField" type="text" value="ognl:CIF.foundSource"
+        validators="validators:required" id="foundSource" class="text large" displayName="message:cifS.foundSource"/>
+    </li>
+    <li class="buttonBar bottom">    	
+    	<span jwcid="@If" condition="ognl:CIF.number == null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.add" id="save" action="listener:save"/>
+        </span>
+        <span jwcid="@If" condition="ognl:CIF.number != null">
+        	<input type="submit" class="button" jwcid="@Submit" value="message:button.edit" id="save" action="listener:save"/>
+        </span>    
+        <input type="submit" class="button" jwcid="@Submit" value="message:button.cancel" id="cancel" action="listener:cancel"
+            onclick="form.onsubmit = null"/>
+    </li>
+</ul>
+</form>
+
+<script type="text/javascript">
+    Form.focusFirstElement($("cifForm"));
+    highlightFormElements();
+</script>
+
+</body>

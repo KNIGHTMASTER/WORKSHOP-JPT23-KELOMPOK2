@@ -1,0 +1,16 @@
+alter table account drop foreign key FKB9D38A2D4759D344;
+alter table account drop foreign key FKB9D38A2DEE3DDFE4;
+alter table cif drop foreign key FK180C028B7C5B0;
+alter table transactions drop foreign key FK74798955D440A385;
+alter table transactions drop foreign key FK74798955FE84C55C;
+alter table transactions drop foreign key FK74798955A1CE8769;
+alter table user_role drop foreign key FK143BF46A7B765365;
+alter table user_role drop foreign key FK143BF46A20A11745;
+drop table if exists account;
+drop table if exists app_user;
+drop table if exists cif;
+drop table if exists customer;
+drop table if exists product;
+drop table if exists role;
+drop table if exists transactions;
+drop table if exists user_role;

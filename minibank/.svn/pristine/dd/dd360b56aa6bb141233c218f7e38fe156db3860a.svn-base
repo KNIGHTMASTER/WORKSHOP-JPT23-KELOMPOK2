@@ -1,0 +1,205 @@
+package id.co.telkomsigma.webapp.action.minibank;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.acegisecurity.AccessDeniedException;
+import org.acegisecurity.Authentication;
+import org.acegisecurity.AuthenticationTrustResolver;
+import org.acegisecurity.AuthenticationTrustResolverImpl;
+import org.acegisecurity.GrantedAuthority;
+import org.acegisecurity.context.SecurityContext;
+import org.acegisecurity.context.SecurityContextHolder;
+import org.acegisecurity.userdetails.UserDetails;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.tapestry.IRequestCycle;
+import org.apache.tapestry.engine.ILink;
+import org.apache.tapestry.event.PageBeginRenderListener;
+import org.apache.tapestry.event.PageEvent;
+import org.apache.tapestry.form.IPropertySelectionModel;
+
+import id.co.telkomsigma.Constants;
+import id.co.telkomsigma.model.LabelValue;
+import id.co.telkomsigma.model.Role;
+import id.co.telkomsigma.model.User;
+import id.co.telkomsigma.model.minibank.Account;
+import id.co.telkomsigma.model.minibank.CIF;
+import id.co.telkomsigma.model.minibank.Product;
+import id.co.telkomsigma.model.minibank.Transactions;
+import id.co.telkomsigma.service.UserExistsException;
+import id.co.telkomsigma.service.minibank.AccountManager;
+import id.co.telkomsigma.service.minibank.CIFManager;
+import id.co.telkomsigma.service.minibank.ProductManager;
+import id.co.telkomsigma.webapp.action.BasePage;
+import id.co.telkomsigma.webapp.action.minibank.model.AccountModel;
+import id.co.telkomsigma.webapp.action.minibank.model.ProductModel;
+
+public abstract class AccountForm extends BasePage implements PageBeginRenderListener{
+
+	public abstract IPropertySelectionModel getProducts();
+
+	public abstract IPropertySelectionModel getAccounts();
+	
+	public abstract void setProducts(IPropertySelectionModel model);
+	
+	public abstract void setAccounts(IPropertySelectionModel model);
+	
+    public abstract AccountManager getAccountManager();
+    
+    public abstract ProductManager getProductManager();
+    
+    public abstract void setAccount(Account account);
+    
+    public abstract Account getAccount();
+    
+    public abstract void setAccountProduct(Long accountProductId);
+    
+    public abstract Long getAccountProduct();
+    
+    public abstract CIFManager getCifManager();
+    
+    public void pageBeginRender(PageEvent event) {
+    	if (getAccount() == null && !event.getRequestCycle().isRewinding()) {
+            setAccount(new Account());            
+        } else if (event.getRequestCycle().isRewinding()) {
+            setAccount(new Account());
+        }
+    	if (getProducts() == null) {
+            setProducts(new ProductModel(bindProductValueModel()));
+        }
+    	
+    	if (getAccounts() == null) {
+            setAccounts(new AccountModel(bindAccountValueModel()));
+        }
+    	
+    	if(getAccountProduct() == null){
+    		if(getAccount()!=null && getAccount().getProduct()!=null){
+    			Product product = getAccount().getProduct();    			
+    			setAccountProduct(product.getId());
+    		}else{
+    			setAccountProduct(null);
+    		}
+    	}
+    }
+    
+	@SuppressWarnings("rawtypes")
+    public List getAccountList() {		
+		return getAccountManager().actionGetAll();
+	}
+
+    @SuppressWarnings("rawtypes")
+	private List bindProductValueModel(){
+    	List<Product> products = this.getProductManager().getAllProduct();
+    	List<LabelValue> productsModel = null;
+    	
+    	if(products!=null && !products.isEmpty()){
+    		productsModel = new ArrayList<LabelValue>();
+    		for(Iterator iterator = products.iterator(); iterator.hasNext();){
+    			Product product = (Product)iterator.next();
+    			productsModel.add(new LabelValue(product.getName(), String.valueOf(product.getId())));
+    		}
+    	}
+    	return productsModel;
+    }
+
+    @SuppressWarnings("rawtypes")
+	private List bindAccountValueModel(){
+    	String cifId = this.getPage().getId();
+    	System.out.println(cifId);
+    	CIF cif = null;
+    	try{
+    		cif = this.getCifManager().actionGetCIF(Long.valueOf(cifId));
+    		System.out.println(cif.toString());
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+    	List<Account> accounts = this.getAccountManager().actionGetAllAccountByCif(cif);
+    	List<LabelValue> accountsModel = null;
+    	
+    	if(accounts!=null && !accounts.isEmpty()){
+    		accountsModel = new ArrayList<LabelValue>();
+    		for(Iterator iterator = accounts.iterator(); iterator.hasNext();){
+    			Account account = (Account)iterator.next();
+    			accountsModel.add(new LabelValue(account.getNumber(), String.valueOf(account.getBalance())));
+    		}
+    	}
+    	return accountsModel;
+    }
+    
+    public void cancel(IRequestCycle cycle) throws IOException {
+        if (log.isDebugEnabled()) {
+            log.debug("entered cancel method");
+        }
+        getResponse().sendRedirect(getRequest().getContextPath());
+    }
+    
+    public ILink save(IRequestCycle cycle) throws UserExistsException, IOException {
+        if (log.isDebugEnabled()) {
+            log.debug("entered save method");
+        }
+       
+        AccountList nextPage = (AccountList) cycle.getPage("accountList"); 
+        try{
+        	String cifId;
+        	CIF cif = null;
+        	if(this.getPage().getPageName().equals("accountForm")){
+        		cifId = this.getPage().getId();
+        		System.out.println("Property Page Account - CIF id = "+cifId);
+        		try{
+        			cif = this.getCifManager().actionGetCIF(Long.valueOf(cifId));
+        		}catch(Exception e){
+        			return getEngineService().getLink(false, nextPage.getPageName());
+        		}
+        	}
+        	Account account = getAccount();
+        	Set<Account> accounts = new HashSet<Account>();
+        	cif.setAccounts(accounts);
+        	account.setCif(cif);
+        	Transactions transaction = new Transactions();
+    		Set<Transactions> transactions = new HashSet<Transactions>();
+        	prepareProductsMultipleSelection(account);
+
+    		transaction.setDate(new Date());
+    		transaction.setStatus(true);
+    		if(this.getPage().getPageName().equals("accountForm")){
+    			transaction.setAmount(account.getBalance());
+    			transaction.setTransactionType("CREATE");
+    		}
+    		transactions.add(transaction);
+    		account.setTransactionsources(transactions);
+    		account.setTransactiondestination(transaction);
+    		account.setCif(cif);
+    		transaction.setAccountSource(account);
+    		
+            this.getAccountManager().actionSaveAccount(account);
+            System.out.println("CIF Manager = "+this.getCifManager());
+    		this.getCifManager().actionSave(cif);
+            nextPage.setMessage(getText("account.registered", account.getNumber()));
+            return getEngineService().getLink(false, nextPage.getPageName());
+    	} catch (Exception e) {
+    		System.out.println("Error Karena = "+e);
+            return getEngineService().getLink(false, nextPage.getPageName());
+        }
+    }
+    
+    private void prepareProductsMultipleSelection(Account account){
+    	String[] accountProductsOnString = getRequest().getParameterValues("productField");
+    	System.out.println("On binding : " + accountProductsOnString);
+    	Set<Product> productInanAccount = null;
+    	if(accountProductsOnString!=null && accountProductsOnString.length>0){
+    		productInanAccount = new HashSet<Product>();
+    		for(int i=0; i<accountProductsOnString.length; i++){
+    			String productInId = (String)accountProductsOnString[i];
+    			Long id = Long.valueOf(productInId);
+    			Product foundProduct = this.getProductManager().actionGetProduct(id);
+    			productInanAccount.add(foundProduct);
+    		}
+    		account.setProduct(productInanAccount.iterator().next());
+    	}
+    }
+}
