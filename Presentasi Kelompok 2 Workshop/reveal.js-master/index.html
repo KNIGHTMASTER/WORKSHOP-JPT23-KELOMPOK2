@@ -35,10 +35,10 @@
             <div class="slides">
                 <!--1-->
                 <section data-background="#FFFFFF">
-                    <img src="image/communication/Telkomsigma.jpg" height="350" width="1000">
-                    
-                    <h4 style="color: #111111">Mini Bank Project</h4>
-                    <h4 style="color: #111111">WorkShop Java Trainee Programmer</h4>
+                    <img src="image/communication/Telkomsigma.jpg" height="340" width="1000">
+                    <img align="right"  height="120" width="150" src="image/java-trainee.jpg" ></a>
+                    <h3 style="color: #111111">&nbsp &nbsp Mini Bank Project</h4>
+                    <h3 style="color: #111111">&nbsp &nbsp WorkShop Java Trainee Programmer</h4>
 					<br><br>
 					<h4 style="color: #111111">Autthor : </h4>
 					<h4 style="color: green">Kelompok II</h4>
@@ -47,53 +47,68 @@
 
                 <!--2-->
                 <section id="fragments">
-                    <h2>Overview</h2>
-                    <ol>
-                        <li class="fragment grow highlight-current-green"><code>Latar Belakang</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Perumusan Masalah</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Tujuan dan Manfaat</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Batasan Masalah</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Tinjauan Pustaka</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Metodologi Penelitian</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Rancangan Sistem</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Hasil Uji Coba</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Kesimpulan dan Saran</code></li>
-                        <li class="fragment grow highlight-current-green"><code>Referensi</code></li>
-                    </ol>
+					
+						<h2>Overview</h2>
+							<ol>
+							<li class="fragment grow highlight-current-green"><code>Abstract</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Software Requirement </code></li>
+							<li class="fragment grow highlight-current-green"><code>Use Case</code></li>
+							<li class="fragment grow highlight-current-green"><code>Class Digram</code></li>
+                                <li class="fragment grow highlight-current-green"><code>Versioning</code></li>
+							<li class="fragment grow highlight-current-green"><code>Model & Database</code></li>
+							<li class="fragment grow highlight-current-green"><code>Data Access object</code></li>
+							<li class="fragment grow highlight-current-green"><code>JUnit: DAO Testing</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Service Manager</code></li>
+							<li class="fragment grow highlight-current-green"><code>Views</code></li>
+							<li class="fragment grow highlight-current-green"><code>Controllers</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Deployment</code></li>
+                            <li class="fragment grow highlight-current-green"><code>Go Live</code></li>
+						</ol>
+					
                 </section>
 
                 <!--2-->
                 <section>
+				<section data-background-transition="slide" data-background="image/communication/Telkomsigma.jpg" style="background: rgba(255,255,255,0.9)" >
                     <section data-background="#FFFFFF">
-                        <h2 style="color: #111111">1. Latar Belakang</h2>
+                        <h2 style="color: #111111">1. ABSTRACT</h2>
+						<p style="font-family: sans-serif; color: #111111">	Project minibank merupakan implementasi dari Core konsep perbankan yang terdiri atas prose deposit , withdrawal dan transfer</p>
+                    </section>
+					</section>
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">2. Software Requirement</h2>
+                        <img src="image/gambar/requirement1.PNG"/>
                     </section>
                     <section data-background="#FFFFFF">
-                        <h2 style="color: #111111">1.1 Manajemen Proyek</h2>
-                        <a><img width="800" height="350" src="image/ProjectManagementPlanWin.png"></a>
-                        <p style="font-family: sans-serif; color: #111111">	Manajemen proyek merupakan perencanaan detail dan usaha atau kegiatan teroganisir untuk menyelesaikan sebuah usaha pada suatu waktu</p>
+                        <h2 style="color: #111111">Software Requirement - Cont</h2>
+                        <img src="image/gambar/requirement2.PNG"/>
+                    </section>
+
+                    <section data-background="#FFFFFF">
+                        <h2 style="color: #111111">Use Case</h2>
+                        <a><img src="image/usecasebank.PNG"></a>
                     </section>
                     <section data-background="#FFFFFF">
-                        <h2 style="color: #111111">1.2 ERP (Enterprise Resource Planning)</h2>
-                        <a><img width="300" height="300" src="image/erp.png"></a>
-                        <p style="font-family: sans-serif; color: #111111">ERP adalah sebuah teknologi sistem informasi terintegrasi yang digunakan oleh perusahaan dalam meningkatkan kinerja perusahaan</p>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h2 style="color: #111111">1.3 PMBOK 4th</h2>
-                        <a><img width="200" height="197" src="image/1.jpg"></a> <a><img width="200" height="197" src="image/pmbok.jpg"></a>
-                        <p style="font-family: sans-serif; color: #111111">PMBOK (Project Management Body of Knowledge)adalah sebuah literatur yang memuat himpunan istilah dan pedoman untuk manajemen proyek yang diterbitkan oleh Project Management Institute(PMI) [wikipedia]
-                        </p>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <img src="image/modulPMBOK.png">
+                        <h2 style="color: #111111">Class Diagram</h2>
+                        <a><img src="image/classdiagrambank.PNG"></a>
                     </section>
                 </section>
                 <!--4-->
                 <section>
                     <section>
-                        <h2>2. Rumusan Masalah</h2>
+                        <h2>3. Development</h2>
                         <ol>
-                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Bagaimana menentukan kriteria yang mempengaruhi ekspektasi stakeholder pada Project Communication Management ?</code></li><br>
-                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Bagaimana mengimplementasikan metode Fuzzy Multi Criteriam Decision Making untuk ekspektasi stakeholder Project Communication Management ?</code></li><br>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Create New Project With Ant</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Prepare Database</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Prepare Versioning</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Model</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Dao</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Junit Test</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Service</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>View</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Controller</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Deploy</code></li>
+                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Go Live</code></li>
                         </ol>
                     </section>
                 </section>
@@ -101,214 +116,158 @@
                 <!--5-->
                 <section>
                     <section>
-                        <h2>3.1. Tujuan dan Manfaat</h2>
-                        <ol>
-                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Untuk menentukan kriteria yang mempengaruhi ekspektasi Stakeholder pada Project Communication Management</code></li><br>
-                            <li class="fragment roll-in highlight-current-green" style="font-size: 27px"><code>Implementasi metode Fuzzy Multi Criteria Decision Making untuk ekspektasi Stakeholder Project Communication Managemnet</code></li><br>
-                        </ol>
-                        <p class="fragment roll-in" style="font-size: 40px">Manfaat penelitian ini untuk menganalisa kinerja stakeholder dalam project communication management</p>
+                        <h2>Create New Project With ANt</h2>
+                        <img src="image/newproject1.PNG">
+                        <img src="image/newproject2.PNG">
                     </section>
                 </section>
-
-                <!--6-->
-
+                
+                <!--7-->
+                <section>
+                    <h3>Prepare Database</h3>
+                    <img src="image/Database%20Configuration.JPG">
+                </section>
 
                 <!--7-->
                 <section>
-                    <h3>4. Batasan Masalah</h3>
-                    <ol>
-                        <li class="fragment roll-in highlight-current-green" style="font-size: 23px"><code>Penelitian ini hanya mengarah pada pembuatan sistem Project Communicaiton management bukan mengarah pada pembuatan modul ERP atau modul Project Management secara Keseluruhan</code></li><br>
-                        <li class="fragment roll-in highlight-current-green" style="font-size: 23px"><code>Penelitian mengarah pada Management Project yang terstandarisasi berbasis PMBOK.</code></li><br>
-                        <li class="fragment roll-in highlight-current-green" style="font-size: 23px"><code>Pengukuran Kinerja menggunakan metode Fuzzy Multi Criteria Decision Making</code></li><br>
-                        <li class="fragment roll-in highlight-current-green" style="font-size: 23px"><code>Pengukuran Ekspektasi Stakeholder berdasarkan PMBOK yang terdiri atas 4 kriteria yaitu : Cost, Time, Quality dan Scope</code></li><br>
-                    </ol>
+                    <h3>Prepare Versioning</h3>
+                    <img src="image/Gambar%20Package%20Explore%20Pake%20SVN.PNG">
                 </section>
 
+                <!--7-->
+                <section>
+                    <h3>Commit History</h3>
+                <img src="image/Commit%20History%20Kita.PNG">
+                </section>
                 <!--8-->
                 <section>
                     <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">5. Tinjauan Pustaka</h3>
+                        <h3 style="color: #111111">Model</h3>
                     </section>
                     <section data-background="Teal">
-                        <h3>5.1. Penelitian Terdahulu : Brigida Arie Minartiningtyas (2011)</h3>
-                        <p>“Model Kesuksesan Penerapan Enterprise Resource Planning pada PT. PLN(Persero) Distribusi Bali”</p>
+                        <h3>Customer Model</h3>
+                        <img src="image/CustomerModel.PNG">
                     </section>
                     <section data-background="#FF4500">
-                        <h3 style="color: #111111">5.2. Kahar, Novhirtamely., 2011.</h3>
-                        <p style="color: #111111">“Aplikasi Metode Fuzzy Multi Criteria Decision Making(FMCDM) untuk optimalisasi penetuan lokasi promosi produk”<br><br>Seminar Nasional Aplikasi Teknologi Informasi SNATI, Yogyakarta, 17-18 juni 2011.</p>
+                        <h3 style="color: #111111">CIF Model</h3>
+                        <img src="image/flowchart/CIFModel.PNG">
                     </section>
                     <section data-background="#00FFFF">
-                        <h3 style="color: #111111">5.3. Sofia Pemsel,dkk 2012 </h3>
-                        <p style="color: #111111">“Project management office a knowledge broker in project-based organisations” <br><br>International Journal of Project Management 31 (2013) 31–42</p>
+                        <h3 style="color: #111111">Account Model</h3>
+                        <img src="image/AccountModel.PNG">
                     </section>
-                    <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">5.4. Manajemen Proyek</h3>
-                        <img src="image/black_folder_projects.png"> <img src="image/ProjectHammer.png">
-                        <p style="color: #111111">Suatu proses kegiatan untuk melakukan perencanaan, pengorganiasian, pengarahan dan pengendalian atas sumber daya organisasi yang dimiliki perusahaan untuk mencapai tujuan tertentu dalam waktu dan sumber daya tertentu pula.</p>
-                    </section>
-                    <section data-background="#FFC0CB">
-                        <h3 style="color: #111111">5.5. Project Communication Management</h3>
-                        <img src="image/Integration.jpg" width="400" height="300">
-                        <p style="font-family: sans-serif; color: #111111">Manajemen komunikasi proyek adalah proses yang bertujuan untuk memastikan bahwa informasi dalam proyek dibuat dengan cepat dan tepat dari setiap activity selama proyek berlangsung hingga selesai.
-                        </p>
-                    </section>
-                    <section data-background="#FFFF00">
-                        <h3 style="color: #111111">5.5.1 Identify Stakeholder</h3>
-                        <a><img src="image/Charter.png"></a>
-                        <p style="color: #111111; font-family: sans-serif">Merupakan proses untuk mengidentitikasi para pemangku kepentingan yang berpengaruh terhadap proyek setelah project charter disetujui
-                        </p>
-                    </section>
-                    <section data-background="#ADFF2F">
-                        <h3 style="color: #111111">5.5.2 Communication Management Plan</h3>
-                        <img src="image/developprojectmanagementplan.png">
-                        <p style="color: #111111; font-family: sans-serif" >Proses pembuatan dokumen perencanaan komunikasi proyek yang akan dijadikan acuan untuk komunikasi antar stakeholder
-                        </p>
-                    </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">5.5.3 Distribute Information</h3>
-                        <img src="image/execution.png" height="128" width="128">
-                        <p style="color: #111111; font-family: sans-serif">Proses utama dalam project communication management yakni mendistribusikan informasi berdasarkan data activity tracking selama proyek berlangsung hingga selesai menggunakan teknologi e-mail
-                        </p>
+                    <section data-background="ADFF2F">
+                        <h3 style="color: #111111">Product Model</h3>
+                        <img src="image/ProductModel.PNG">
                     </section>
                     <section data-background="#DCDCDC">
-                        <h3 style="color: #111111">5.5.4 Manage Stakeholder Expectation</h3>
-                        <img src="image/control.png" width="128" height="128">
-                        <p style="color: #111111; font-family: sans-serif">Proses kontrol dan pengelolaan harapan- harapan stakeholder guna mencapai tujuan yang diinginkan.
-                        </p>
+                        <h3 style="color: #111111">Transaction Model</h3>
+                        <img src="image/TransactionsModel.PNG">
                     </section>
-                    <section data-background="#D2691E">
-                        <h3 style="color: #111111">5.5.5. Report Performance</h3>
-                        <img src="image/integratedchangecontrol.png" height="128" width="128">
-                        <p style="color: #111111; font-family: sans-serif">Proses pelaporan informasi performa proyek dalam bentuk grafik yang telah diolah oleh beberapa domain dalam PMBOK
-                        </p>
+                    <section data-background="#DCDCDC">
+                        <h3 style="color: #111111">Register Model as Hibernate Docklet</h3>
+                        <img src="image/gambar/registermodel.PNG">
+                    </section>
+
+                    <!--DAO-->
+                    <section data-background="#FFC0CB">
+                        <h3 style="color: #111111">5. Data Access Object (DAO)</h3>
+                    </section>
+                    <section data-background="#FFFF00">
+                        <h3 style="color: #111111">5.1. Customer Dao</h3>
+                        <a><img src="image/CustomerDao.PNG"></a>
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.2 CIF Dao</h3>
+                        <img src="image/CIFDAo.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.3 Account Dao</h3>
+                        <img src="image/AccountDao.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.4 Product Dao</h3>
+                        <img src="image/ProductDao.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.5 Transaction Dao</h3>
+                        <img src="image/TransactionDao.PNG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">5.6 ApplicationContext-Hibernate</h3>
+                        <img src="image/gambar/applicationcontext-hibernate.JPG">
+                    </section>
+
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">JUNIT TESTING</h3>
+                        <img src="image/gambar/applicationcontext-hibernate.JPG">
+                    </section>
+
+                    <!--MANAGER-->
+                    <section data-background="#00FFFF">
+                        <h3 style="color: #111111">6. Service (Manager)</h3>
+                    </section>
+                    <section data-background="#FFFF00">
+                        <h3 style="color: #111111">6.1. User Manager</h3>
+                        <a><img src="image/gambar/userManager.PNG"></a>
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.2 CIF Manager</h3>
+                        <img src="image/gambar/cifmanager.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.3 Account Manager</h3>
+                        <img src="image/gambar/accountmanager.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.4 Product Manager</h3>
+                        <img src="image/gambar/productmanajer.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.5 Transaction Manager</h3>
+                        <img src="image/gambar/tarnsactionsmanager.JPG">
+                    </section>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">6.6 Application Context Service</h3>
+                        <img src="image/gambar/applicationcontext-service.JPG">
+                        <img src="image/gambar/applicationcontext-service2.JPG">
+                    </section>
                     </section>
                 </section>
 
                 <!--9-->
                 <section>
-                    <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">6. Metode Penelitian</h3>
-                    </section>
                     <section data-background="#ADFF2F">
-                        <h3 style="color: #111111">6.1. Logika Fuzzy</h3>
-                        <img src="image/flowchart/fuzzy.png" height="478" width="200">
+                        <h3 style="color: #111111">View</h3>
+                        <img src="image/gambar/productformhtml.PNG">
                     </section>
-                </section>
 
-                <!--10-->
-                <section>
-                    <section data-background="yellow">
-                        <h3 style="color: #111111">7. Rancangan Sistem</h3><br>
-                        <ol>
-                            <li class="fragment roll-in" style="font-size: 50px; color: #111111"><code>Flow Chart Diagram.</code></li><br>
-                            <li class="fragment roll-in" style="font-size: 50px; color: #111111"><code>Class Diagram.</code></li><br>
-                        </ol>
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">*.Page File</h3>
+                        <img src="image/gambar/productformjava.PNG">
                     </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">7.1.1 Flow Chart Project Communication Management</h3>
-                        <img src="image/flowchart/global.png" height="600" width="241"/>
-                    </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">7.1.2 Flow Chart Identify Stakeholder</h3>
-                        <img src="image/flowchart/stakeholderregister.png" height="500" width="250"/>
-                    </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">7.1.3 Flow Chart Plan Communication</h3>
-                        <img src="image/flowchart/communicationmanagementplan.png" height="450" width="250">
-                    </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">7.1.4 Flow Chart Distribute Information</h3>
-                        <img src="image/flowchart/distributeinformation.png" height="356" width="200"/>
-                    </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">7.1.5 Flow Chart Manage Stakeholder Expectation</h3>
-                        <img src="image/flowchart/managestakeholderexpectation.png" height="500" width="200"/>
-                    </section>
-                    <section data-background="#00FFFF">
-                        <h3 style="color: #111111">7.1.6 Flow Chart Report Performance</h3>
-                        <img src="image/flowchart/reportperformance.png" width="300" height="450" />
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">7.2 Class Diagram</h3>
-                        <div align="center">
-                            <a href="classDiagramPDF.html">Show</a>
-                        </div>
+
+                    <section data-background="#ADFF2F">
+                        <h3 style="color: #111111">Controller</h3>
+                        <img src="image/gambar/productformpage.PNG">
                     </section>
                 </section>
 
                 <!--11-->
                 <section>
                     <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">8. hasil Uji Coba</h3>
+                        <h3 style="color: #111111">5. Deployment</h3>
                     </section>
                     <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">8.1 Implementasi Perangkat Lunak</h3>
-                        <a href="localhost:8080/ERPProjectManagement" target="_blank">Show Main Page Program</a>
+                        <h3 style="color: #111111">6. Go Live</h3>
+                        <a href="localhost:8060/minibank" target="_blank">Show Main Page Program</a>
                         <p align="center" style="color: #111111; font-size: 20px">(right click -> open in new tab)</p>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">8.2 Communication Management Dashboard</h3>
-                        <a href="localhost:8080/ERPProjectManagement/communicationDashboard" target="_blank">Show Communication Dashboard</a>
-                        <p align="center" style="color: #111111; font-size: 20px">(right click -> open in new tab)</p>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">8.4 Stakeholder Expectation</h3>
-                        <iframe src="http://localhost:8080/ERPProjectManagement/projectResponses/index" width="100%" height="700px">
-                        </iframe>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h5 style="color: #111111">8.6 Fungsionalitas Sistem Menurut PMBOK</h5>
-                        <iframe src="Tabel1.html" width="100%" height="650px">
-                        </iframe>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h5 style="color: #111111">8.7 Fungsionalitas Sistem Menurut User</h5>
-                        <iframe src="Tabel2.html" width="100%" height="650px">
-                        </iframe>
-                    </section>
-                </section>
-
-                <!--12-->
-                <section>
-                    <section>
-                        <h3>9.1 Kesimpulan</h3>
-                        <ol>
-                            <li class="fragment roll-in highlight-current-green" style="font-size: 25px">
-                                <code>Dari rancang bangun aplikasi, perangkat lunak yang dihasilkan telah memenuhi 72% sesuai PMBOK dari keseluruhan fungsional yang ada dan bersarkan user SAP PT. Semen Gresik Tbk, diperoleh kepuasan sebesar 68%.</code>
-                            </li>
-                            <li class="fragment roll-in highlight-current-green" style="font-size: 25px">
-                                <code>Penggunaan metode FMCDM ini dapat membantu dalam pengambilan keputusan untuk memastikan tepat waktu, tepat pengumpulan, tepat distribusi, tepat penyimpanan, tepat pengambilan, dan disposisi akhir dari informasi proyek.</code>
-                            </li>
-                        </ol>
-                    </section>
-                    <section data-background="#FFFFFF">
-                        <h3 style="color: #111111">9.2 Saran</h3>
-                        <p style="font-family: sans-serif; color: #111111" align="justify">
-                            Saran yang dapat diajukan untuk pengembangan dan perbaikan Sistem Project Communication Management adalah:
-                        </p><br>
-                        <p style="font-family: sans-serif; color: #111111" align="justify">
-                            Untuk penelitian selanjutnya dapat digunakan metode lain guna membandingkan dengan metode FMCDM, sehingga didapatkan akurasi yang lebih baik dari metode FMCDM.
-                        </p>
                     </section>
                 </section>
 
                 <!--10-->
                 <section data-background="#FFFFFF">
-                    <h4 style="color: #111111">Referensi</h4>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[1] Jiwa Husada Tarigan, Zeplin (2006). “Dapatkah  Enterprise Resource Planning Meningkatkan Kinerja Perusahaan (Studi Kasus Perusahaan Manufaktur Jawa Timur)”.</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[2] “Project Management Guide Book“ : ISBN 0-473-10445-8. Method 123 Ltd.2003</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[3] Sofia Pemsel,dkk 2012 “Project management office a knowledge broker in project-based organisations” :   International Journal of Project Management 31 (2013) 31–42</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[4] Djunaidi, M. dkk. (2005). “Penentuan Jumlah Produksi Dengan Aplikasi Metode Fuzzy Mamdani”. Jurnal Ilmiah Teknik Industri. 4, (2), 95-104.</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[5] Febransyah, Ade (2006). “Mengukur Kesuksesan Produk pada Tahap Desain: Sebuah Pendekatan FUZZY-MCDM”. Jurnal Teknik Industri Vol. 8, NO. 2, Desember 2006: 122-130.</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[6]  Kurniawan, Edy., “Enterprise Resource Planning”, URL : http://research.amikom.ac.id/index.php/KIM/article/download/4878/3204</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[7] Wibisono Setyawan “Enterprise Resource Planning (ERP) Solusi Sistem Informasi Terintegrasi” Jurnal Teknologi Informasi DINAMIK Volume X, No.3, September 2005 : 150-159</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[8] NN.,“Stakeholder Satisfaction”, URL : http://www.bapsi.its.ac.id/produk-09.php?tbl=20</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[9] NN., “Respon Stakeholders”, URL : http://sobatbaru.blogspot.com/2010/03/respon-stakeholders.html</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[10] Eko Purwanto, M., “Mengukur Kualitas Pelayanan, Bagian 2”, URL : http://edukasi.kompasiana.com/2010/01/23/mengukur-kualitas-pelayanan-bagian-2/</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[11] Kahar, Novhirtamely., 2011. “Aplikasi Metode Fuzzy Multi Criteria Decision Making(FMCDM) untuk optimalisasi penetuan lokasi promosi produk” Seminar Nasional Aplikasi Teknologi Informasi SNATI, Yogyakarta, 17-18 juni 2011.</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[12] Ayuningtiyas, Ika Kurnianti. Dkk (2007) “Sistem Pendukung Keputusan Penanganan Kesehatan Balita Menggunakan Penalaran Fuzzy Mamdani” Seminar Nasional Aplikasi Teknologi Informasi SNATI, Yogyakarta, 16 juni 2007.</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[13] Ayuningtiyas, Ika Kurnianti. Dkk (2007) “Sistem Pendukung Keputusan Penanganan Kesehatan Balita Menggunakan Penalaran Fuzzy Mamdani” Seminar Nasional Aplikasi Teknologi Informasi SNATI, Yogyakarta, 16 juni 2007.</p>
-                        <p style="font-size: 17px; text-align: left; color: #111111">[14] “A Guide to The Project Management Body of Knowledge (PMBOK Guide)” Amerika : Project Management Institute. Inc. 2008.</p>
+                    <h1 style="color: #111111">Matur Thank You</h1>
                 </section>
 
             </div>
